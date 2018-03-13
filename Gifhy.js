@@ -24,22 +24,23 @@ function additionalNewerItems(num) {
   return num;
 }
 
-function makeButton(){
-  var buttonName = $("#test-input").val();
+function makeButton(buttonName){
   console.log("where am i??" + buttonName);
+  var testDiv = $("<div>");
+  
   var listItem = $("<li>");
-  listItem.addClass("nav-item");
+  listItem.addClass("list-group-item list-group-item-dark list-group-item-action");
   listItem.attr("link", buttonName);
+  listItem.text(buttonName);
   console.log(listItem);
+ 
+ 
+  
+  //console.log(linkList);
 
-  var linkList = $("<a>");
-  linkList.addClass("nav-link");
-  linkList.attr("href = ", "#");
-  linkList.attr("link", buttonName);
-  linkList.text(buttonName);
+  $("#testBar").append(listItem);
 
-  $("#links").append(linkList);
-  listItem.append(linkList);
+  //console.log($("#testBar").html());
 
 
 }
@@ -98,6 +99,13 @@ $(".trending").on("click", function(event) {
       }
     }
   });
+});
+
+$(".list-group-item").on("click", function(event){
+   var testClick = $(this).text();
+   console.log(testClick);
+
+
 });
 
 $("#find-gif").on("click", function(event) {
@@ -173,6 +181,7 @@ $("#find-gif").on("click", function(event) {
 
         console.log(imageDiv);
       }
+      makeButton(search);
     }
   });
 });
