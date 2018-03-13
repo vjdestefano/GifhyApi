@@ -33,15 +33,8 @@ function makeButton(buttonName){
   listItem.attr("link", buttonName);
   listItem.text(buttonName);
   console.log(listItem);
- 
- 
-  
-  //console.log(linkList);
 
   $("#testBar").append(listItem);
-
-  //console.log($("#testBar").html());
-
 
 }
 
@@ -221,9 +214,4 @@ $(document).on("click", ".images", function() {
     $(this).addClass("playing");
     $(this).attr("src", src.replace(/\_s.gif/i, ".gif"));
   }
-});
-
-
-$(document).on("click", function(event){
-console.log(this);
 });
